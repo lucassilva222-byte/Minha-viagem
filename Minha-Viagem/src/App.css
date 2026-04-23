@@ -1,0 +1,40 @@
+.cont-app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-header{
+    background-color: #1be7ff;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cont-main {
+    background-image: url('/img-praia.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    flex: 1;
+}
+
+
+.botoes-nav{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e4ff1a
+}
+
+.botoes-nav:hover {
+    background-color: white;
+}
+/* 
+Cores escolhidas pelo grupo:
+1be7ff azul | 6eeb83 verde | e4ff1a amarelo | e8aa14 amarelo queimado  | ff5714 laranja
+*/

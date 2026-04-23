@@ -9,7 +9,7 @@ function CadastroUsuario() {
     const [confirmarSenha, setConfirmarSenha] = useState("")
 
     function Cadastrar() {
-
+        
     }
 
     return (

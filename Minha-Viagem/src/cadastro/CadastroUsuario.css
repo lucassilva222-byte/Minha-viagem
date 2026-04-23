@@ -1,16 +1,20 @@
 .cont-cadastro {
     min-width: 100vw;
     min-height: 100vh;
-    background-color: darkkhaki;
+    background-image: url('C:\minhaViagem\Minha-viagem\Minha-Viagem\public\img-praia.jpg'); 
+    background-size: cover;        /* Faz a imagem preencher todo o espaço */
+    background-position: center;   /* Centraliza a imagem */
+    background-repeat: no-repeat;  /* Impede que a imagem fique repetindo */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 20px;
 }
+
 .cont-form {
     min-width: 50vh;
-    background-color: blue;
+    background-color: #50af33;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -22,15 +26,20 @@
     flex: 1;
     display: flex;
     align-items: center;
-    background-color: brown;
+    background-color: rgba(165, 42, 42, 0);
     width: 100%;
 }
 .cont-inputs label {
     margin-right: 5px;
     width: 50%;
     text-align: center;
-    background-color:  palegoldenrod;
+    background-color:  #e4ff1a00;
 }
 h1 {
-    color: aqua;
+    color: #000000;
 }
+
+/* 
+Cores escolhidas pelo grupo:
+1be7ff azul | 6eeb83 verde | 50af33 verde escuro | e4ff1a amarelo | e8aa14 amarelo queimado  | ff5714 laranja
+*/

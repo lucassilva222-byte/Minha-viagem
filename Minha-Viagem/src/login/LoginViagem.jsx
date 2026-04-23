@@ -1,13 +1,12 @@
 import { useState } from 'react'
 
 
-function CadastroUsuario() {
+function Login() {
     
     const [nome, setNome] = useState("")
-    const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
     
-    function Cadastrar() {
+    function Login() {
 
     }
     
@@ -27,4 +26,4 @@ function CadastroUsuario() {
     )
 }
 
-export default CadastroUsuario
+export default Login
