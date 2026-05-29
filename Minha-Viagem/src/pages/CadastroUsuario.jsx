@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './CadastroUsuario.css'
+import Navbar from '../components/Navbar';
 
 function CadastroUsuario() {
 
@@ -14,6 +15,7 @@ function CadastroUsuario() {
 
     return (
         <div className={"cont-cadastro"}>
+        <Navbar />
         <h1>MY TRAVEL</h1>
             <div className={"cont-form"}>
                 <h1>Crie sua conta</h1>

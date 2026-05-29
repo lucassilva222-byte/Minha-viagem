@@ -1,0 +1,13 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    min-width: 100vw;
+
+    height: 70px;
+    background-color: rgb(180, 255, 255);
+}
+a{
+    text-decoration: none;
+}
