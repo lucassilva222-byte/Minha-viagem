@@ -1,14 +1,10 @@
 import { createBrowserRouter } from "react-router-dom"; 
 import Home from "../pages/Home";
-import CadastroUsuario from "../pages/CadastroUsuario";
-import Login from "../pages/LoginViagem";
-import EmAlta from "../pages/EmAlta";
+import CriarPost from "../pages/CriarPost";
 
 const router = createBrowserRouter([
-    { path: "/", element: <Home />},
-    { path: "/cadastro", element: <CadastroUsuario />},
-    { path: "/login", element: <Login />},
-    { path: "/emalta", element: <EmAlta />}
+    { path: "/", element: <Home /> },
+    { path: "/postar", element: <CriarPost /> }
 ]);
 
 export default router;

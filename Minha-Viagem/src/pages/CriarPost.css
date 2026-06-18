@@ -1,0 +1,98 @@
+.postar-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #0f172a;
+    color: white;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding-bottom: 30px;
+}
+
+.postar-content {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.postar-content h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+    text-align: center;
+}
+
+.postar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="file"] {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.midias-count {
+    font-size: 0.85rem;
+    color: #38bdf8;
+    font-weight: 500;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.btn-postar {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn-postar:hover {
+    background-color: #7dd3fc;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

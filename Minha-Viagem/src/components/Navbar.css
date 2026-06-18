@@ -1,13 +1,80 @@
-.navbar{
+/* Configurações básicas e reset local */
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    min-width: 100vw;
-
+    padding: 0 40px;
+    width: 100%;
+    box-sizing: border-box;
     height: 70px;
-    background-color: rgb(180, 255, 255);
-}
-a{
+    background-color: #0f172a; /* Azul escuro moderno */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Estilização da Logo */
+  .navbar-logo a {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
     text-decoration: none;
-}
+    letter-spacing: -0.5px;
+  }
+  
+  /* Grupo de links */
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  /* Links padrão */
+  .nav-item {
+    color: #94a3b8; /* Cinza claro azulado */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .nav-item:hover {
+    color: #38bdf8; /* Azul brilhante no hover */
+  }
+  
+  /* Botão de Login (Destaque) */
+  .btn-login {
+    background-color: #38bdf8;
+    color: #0f172a !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+  }
+  
+  .btn-login:hover {
+    background-color: #7dd3fc;
+    transform: translateY(-1px);
+  }
+  
+  .btn-login:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 600px) {
+    .navbar {
+      padding: 0 20px;
+    }
+    .navbar-links {
+      gap: 15px;
+    }
+    .nav-item {
+      font-size: 0.85rem;
+    }
+    .btn-login {
+      padding: 6px 12px;
+    }
+  }
+  

@@ -4,11 +4,11 @@ export const GlobalContext = createContext()
 
 export const GlobalContextProvider = ({children}) => {
     const[usuario, setUsuario] = useState("Lúcio Fernando")
-    const[jogadorPOTM, setJogadorPOTM] = useState('Endrick')
+    const [posts, setPosts] = useState([]);
 
     return(
         <GlobalContext.Provider value={{
-                usuario, setUsuario, jogadorPOTM, setJogadorPOTM
+                usuario, setUsuario, posts, setPosts
             }}>
             {children}
         </GlobalContext.Provider>
