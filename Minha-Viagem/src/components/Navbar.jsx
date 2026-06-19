@@ -8,7 +8,7 @@ function Navbar() {
         <Link to="/">MY TRAVEL</Link>
       </div>
       <div className="navbar-links">
-        <Link to="/" className="nav-item">Linha do Tempo</Link>
+        <Link to="/" className="nav-item">Feed</Link>
         <Link to="/postar" className="nav-item btn-login">Nova Postagem</Link>
       </div>
     </nav>

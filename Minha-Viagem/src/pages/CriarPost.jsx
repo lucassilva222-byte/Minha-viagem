@@ -29,22 +29,29 @@ function CriarPost() {
     async function salvarPost(e) {
         e.preventDefault()
     
-        const formData = new FormData()
-        formData.append('autor', usuario || "Viajante Anônimo")
-        formData.append('origem', origem)
-        formData.append('destino', destino)
-        formData.append('valor_gasto', valorGasto)
-        formData.append('tempo_estadia', tempoEstadia) 
-        formData.append('legenda', legenda)
-        
-        arquivos.forEach(arquivo => {
-            formData.append('midias', arquivo)
-        })
+        // Mapeia os arquivos salvando o prefixo da pasta pública + o nome do arquivo
+        const midiasFormatadas = arquivos.map(arquivo => ({
+            url: `/imgs/${arquivo.name}`,
+            tipo: arquivo.type.startsWith('video/') ? 'video' : 'imagem'
+        }))
+
+        const dadosPost = {
+            autor: usuario || "Viajante Anônimo",
+            origem: origem,
+            destino: destino,
+            valorGasto: valorGasto ? parseFloat(valorGasto.replace(/[^\d,.-]/g, '').replace(',', '.')) || null : null,
+            tempoEstadia: tempoEstadia,
+            legenda: legenda,
+            midias: midiasFormatadas
+        }
     
         try {
             const resposta = await fetch('http://localhost:3000/posts', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosPost)
             })
     
             if (resposta.ok) {
@@ -122,6 +129,19 @@ function CriarPost() {
                         {arquivos.length > 0 && (
                             <span className="midias-count">🔄 {arquivos.length} arquivo(s) selecionado(s)</span>
                         )}
+
+                        
+                        <div className="preview-galeria">
+                            {arquivos.map((arquivo, index) => (
+                                <div key={index} className="preview-item">
+                                    {arquivo.type.startsWith('video/') ? (
+                                        <video src={`/imgs/${arquivo.name}`} className="preview-media" muted />
+                                    ) : (
+                                        <img src={`/imgs/${arquivo.name}`} alt={arquivo.name} className="preview-media" />
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="form-group">

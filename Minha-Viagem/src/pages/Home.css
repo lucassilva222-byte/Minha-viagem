@@ -41,6 +41,7 @@
 }
 
 .post-card {
+    position: relative; /* Base de posicionamento para as ações flutuantes */
     background-color: #1e293b;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -49,7 +50,7 @@
 }
 
 .post-header {
-    padding: 15px;
+    padding: 15px 85px 15px 15px; /* Espaço aumentado à direita para não bater nos botões */
     border-bottom: 1px solid #334155;
     display: flex;
     justify-content: space-between;
@@ -76,6 +77,116 @@
 .route-arrow {
     color: #64748b;
 }
+
+/* Área dos botões flutuantes de Ação (Editar e Excluir) */
+.post-actions-container {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.btn-acao {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-acao:hover {
+    transform: scale(1.08);
+}
+
+.btn-excluir:hover {
+    background-color: #ef4444;
+    border-color: #f87171;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+.btn-editar:hover {
+    background-color: #38bdf8;
+    border-color: #7dd3fc;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* Inputs de edição da rota (Header) */
+.post-route-edit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.post-route-edit input {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    max-width: 120px;
+}
+
+/* Caixa estrutural do formulário de edição do Relato */
+.post-caption-edit-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-legenda-edit {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    min-height: 80px;
+    resize: vertical;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.edit-box-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-salvar-edit {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-cancelar-edit {
+    background-color: #475569;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-salvar-edit:hover { background-color: #7dd3fc; }
+.btn-cancelar-edit:hover { background-color: #64748b; }
 
 .post-details-badge {
     background-color: #0f172a;
