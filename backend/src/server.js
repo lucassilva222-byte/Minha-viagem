@@ -178,3 +178,47 @@ app.delete('/posts/:id', async (req, res) => {
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
 });
+
+app.get('/dashboard', async (req, res) => {
+    try {
+        // 1. Total de posts cadastrados
+        const totalPostsRes = await pool.query('SELECT COUNT(*) AS total FROM posts');
+        const totalPosts = parseInt(totalPostsRes.rows[0].total, 10);
+
+        // 2. Gasto total da comunidade e Média de gasto por viagem
+        const gastosRes = await pool.query('SELECT SUM(valor_gasto) AS total_gasto, AVG(valor_gasto) AS media_gasto FROM posts');
+        const gastoTotalComunidade = parseFloat(gastosRes.rows[0].total_gasto) || 0;
+        const mediaGastoViagem = parseFloat(gastosRes.rows[0].media_gasto) || 0;
+
+        // 3. Top 5 Destinos mais visitados (agrupados por ocorrência)
+        const topDestinosRes = await pool.query(`
+            SELECT destino, COUNT(*) AS visitas 
+            FROM posts 
+            WHERE destino IS NOT NULL AND destino != ''
+            GROUP BY destino 
+            ORDER BY visitas DESC, destino ASC
+            LIMIT 5
+        `);
+
+        // 4. Principais Cidades de Origem
+        const topOrigensRes = await pool.query(`
+            SELECT origem, COUNT(*) AS quantidade 
+            FROM posts 
+            WHERE origem IS NOT NULL AND origem != ''
+            GROUP BY origem 
+            ORDER BY quantidade DESC, origem ASC
+            LIMIT 5
+        `);
+
+        res.json({
+            totalPosts,
+            mediaGastoViagem,
+            gastoTotalComunidade,
+            topDestinos: topDestinosRes.rows,
+            topOrigens: topOrigensRes.rows
+        });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json({ error: 'Erro ao compilar dados do dashboard' });
+    }
+});
