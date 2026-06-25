@@ -5,7 +5,10 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">MY TRAVEL</Link>
+        <Link to="/">
+          <img src="/iconmytravel.png" alt="Logo My Travel" className="logo-img" />
+          MY TRAVEL
+        </Link>
       </div>
       <div className="navbar-links">
         <Link to="/" className="nav-item">Feed</Link>
